@@ -21,7 +21,7 @@ def prepare_cmd(
     global_flags = get_flags(global_flags)
     cmd_flags = get_flags(cmd_flags)
     dbt_models = paths_to_dbt_models(paths, prefix, postfix)
-    cmd = ["dbt", *global_flags, "run", "-m", *dbt_models, *cmd_flags]
+    cmd = ["dbt", *global_flags, "run", *cmd_flags, "-m", *dbt_models]
     return cmd
 
 
